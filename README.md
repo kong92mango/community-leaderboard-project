@@ -49,13 +49,13 @@ As a user, I want to view a leaderboard of all the communities, ranked based on 
 
 #### Acceptance Criteria
 - [x] Communities should be ranked in the leaderboard based on the total collective experience points of their members.
-- [ ] Each community's entry in the leaderboard should include:
-  - [ ] Community logo
-  - [ ] Community name
-  - [ ] Placing (rank) in the leaderboard
-  - [ ] Total number of collective experience points
-  - [ ] Number of users in the community
-- [ ] The leaderboard should be visually appealing and user-friendly on the frontend. (Please refer to the picture above, this would be considered an acceptional example for the sake of this test)
+- [x] Each community's entry in the leaderboard should include:
+  - [x] Community logo
+  - [x] Community name
+  - [x] Placing (rank) in the leaderboard
+  - [x] Total number of collective experience points
+  - [x] Number of users in the community
+- [x] The leaderboard should be visually appealing and user-friendly on the frontend. (Please refer to the picture above, this would be considered an acceptional example for the sake of this test)
 
 ### Notes
 Unlike the previous user story, no APIs or files were prepared for you. Feel free to complete this task in any way you see fit. Also there are no restrictions on libraries or third party tools. Feel free to use whatever technologies or external packages you like to complete this user story. Feel free to just place the leaderboard underneath the existing UI.

@@ -1,0 +1,24 @@
+.community-ranking-list {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .community-ranking-list h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .leaderboard-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between leaderboard entries */
+  }
+  
+  .leaderboard-loading {
+    text-align: center;
+    font-size: 1.5em;
+    color: #777;
+  }

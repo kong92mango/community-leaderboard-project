@@ -1,0 +1,64 @@
+
+.leaderboard-entry {
+    border: 1px solid #ccc;
+    padding: 10px; 
+    margin: 10px; 
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s;
+    background-color: #fff; 
+  }
+  
+  .leaderboard-entry:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leaderboard-entry img {
+    width: 90px; 
+    height: 90px;
+    margin-left: 40px; 
+    margin-right: 40px; 
+    border-radius: 50%;
+  }
+  
+  .leaderboard-entry div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .leaderboard-entry h2 {
+    margin: 0 0 5px 0; 
+    font-size: 1.2em; 
+  }
+  
+  .leaderboard-entry p {
+    margin: 3px 0;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 3px; 
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Top rank styles */
+  
+  .gold-rank {
+    border-color: gold;
+    background-color: #fff8e1;
+    font-weight: 700;
+  }
+  
+  .silver-rank {
+    border-color: silver;
+    background-color: #f0f0f0;
+    font-weight: 600;
+  }
+  
+  .bronze-rank {
+    border-color: coral;
+    background-color: #ffefd5;
+    font-weight: 500;
+  }

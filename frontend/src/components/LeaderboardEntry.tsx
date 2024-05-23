@@ -1,4 +1,5 @@
 import React from 'react';
+import './LeaderboardEntry.css';
 
 interface LeaderboardEntryProps {
   logoUrl: string;
@@ -9,9 +10,17 @@ interface LeaderboardEntryProps {
 }
 
 const LeaderboardEntry: React.FC<LeaderboardEntryProps> = ({ logoUrl, name, rank, exp, userCount }) => {
+
+  const topRankStyling = (rank: number): string => {
+    if (rank === 1) return 'gold-rank';
+    if (rank === 2) return 'silver-rank';
+    if (rank === 3) return 'bronze-rank';
+    return '';
+  }
+
   return (
-    <div style={{ border: '1px solid #ccc', padding: '10px', margin: '10px', borderRadius: '5px', display: 'flex', alignItems: 'center' }}>
-      <img src={logoUrl} alt={`${name} logo`} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+    <div className={`leaderboard-entry ${topRankStyling(rank)}`}>
+      <img src={logoUrl} alt={`${name} logo`} />
       <div>
         <h2>{name}</h2>
         <p>Rank: {rank}</p>
