@@ -1,5 +1,6 @@
 import './App.css'
 import UserCommunityRelationshipManager from './components/UserCommunityRelationshipManager'
+import CommunityRankingList from './components/CommunityRankingList'
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       </div>
       <div>
         <UserCommunityRelationshipManager />
+        <CommunityRankingList/>
       </div>
     </>
   )

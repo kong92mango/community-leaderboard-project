@@ -61,13 +61,21 @@ const UserCommunityRelationshipManager = () => {
 
     if (usersLoading || communitiesLoading) return 'Loading...';
 
+    // If not loading, we can sort users based on user.email
+
+    const sortedUsers = (users || []).sort((a: User, b: User) => {
+        if (a.email < b.email) return -1;
+        if (a.email > b.email) return 1;
+        return 0;
+    });
+
     return (
         <div>
             <label>
                 User: &nbsp;
                 <select onChange={(e) => setSelectedUser(e.target.value)}>
                     <option value="">Select User</option>
-                    {users.map((user: User) => <option key={user._id} value={user._id}>{user.email}</option>)}
+                    {sortedUsers.map((user: User) => <option key={user._id} value={user._id}>{user.email}</option>)}
                 </select>
             </label>
 

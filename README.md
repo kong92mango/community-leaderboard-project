@@ -48,7 +48,7 @@ For this user story, do not worry about making any UI. UI is already created and
 As a user, I want to view a leaderboard of all the communities, ranked based on the collective experience points of their members. The leaderboard should display the community's logo, name, rank, total experience points, and the number of users in each community.
 
 #### Acceptance Criteria
-- [ ] Communities should be ranked in the leaderboard based on the total collective experience points of their members.
+- [x] Communities should be ranked in the leaderboard based on the total collective experience points of their members.
 - [ ] Each community's entry in the leaderboard should include:
   - [ ] Community logo
   - [ ] Community name
