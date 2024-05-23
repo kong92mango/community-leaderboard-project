@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "pnpm -r run dev",
     "dev:backend": "pnpm -filter backend run dev",
-    "dev:frontend": "pnpm -filter frontend run dev"
+    "dev:frontend": "pnpm -filter frontend run dev",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "ts-node": "^10.9.2"
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": "^20.0.0"

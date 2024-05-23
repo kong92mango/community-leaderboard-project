@@ -1,10 +1,10 @@
-import express, { Express } from "express";
-import { apiRouter } from "./routes";
+import express, { Express } from 'express';
+import { apiRouter } from './routes';
 import { mongoose } from '@typegoose/typegoose';
 import cors from 'cors';
 import { WebSocketServer } from 'ws';
-import { CommunityModel } from "./models/Community";
-import { UserModel } from "./models/User";
+import { CommunityModel } from './models/Community';
+import { UserModel } from './models/User';
 import { BROADCAST_INTERVAL, API_BASE_URL, DEFAULT_SOCKET_PORT } from '../../shared/constants';
 
 
@@ -22,7 +22,7 @@ mongoose.connect('mongodb://localhost:27017')
     console.error('Error connecting to MongoDB. Check the README on how to run the database.', error);
   });
 
-app.use("/", apiRouter);
+app.use('/', apiRouter);
 
 const server = app.listen(port, () => {
   console.log(`Server is running at ${API_BASE_URL}`);

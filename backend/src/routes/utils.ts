@@ -1,4 +1,4 @@
-import express from "express";
+import express from 'express';
 import { UserModel } from '../models/User';
 import { CommunityModel } from '../models/Community';
 import crypto from 'crypto';
@@ -9,9 +9,9 @@ const utilsRouter = express.Router();
  * @route GET /utils/health
  * @returns {number} - Status code
  */
-utilsRouter.get("/health", (_, res) => {
+utilsRouter.get('/health', (_, res) => {
     res.sendStatus(200);
-})
+});
 
 /**
  * @route GET /utils/inflate-db
@@ -20,7 +20,7 @@ utilsRouter.get("/health", (_, res) => {
  * Otherwise, it will create the users and communities and return a 200 status code.
  * @returns {number} - Status code
  */
-utilsRouter.get("/inflate-db", async (_, res) => {
+utilsRouter.get('/inflate-db', async (_, res) => {
     try {
         const USERS_COUNT = 100;
         const COMMUNITIES_COUNT = 10;
@@ -75,7 +75,7 @@ utilsRouter.get("/inflate-db", async (_, res) => {
  * @route GET /utils/drop-db
  * @description Deletes all users and communities from the database
  */
-utilsRouter.get("/drop-db", async (_, res) => {
+utilsRouter.get('/drop-db', async (_, res) => {
     try {
         await UserModel.deleteMany({});
         await CommunityModel.deleteMany({});
