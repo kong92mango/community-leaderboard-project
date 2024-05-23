@@ -1,6 +1,6 @@
 import { prop, getModelForClass } from '@typegoose/typegoose';
 
-class Community {
+export class Community {
 	@prop({ required: true })
 	public name?: string;
 

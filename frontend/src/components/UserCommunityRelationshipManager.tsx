@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast';
 interface MutationData {
     userId: string;
     communityId: string;
-};
+}
 
 const UserCommunityRelationshipManager = () => {
     const [selectedUser, setSelectedUser] = useState<string | null>(null);
@@ -26,20 +26,24 @@ const UserCommunityRelationshipManager = () => {
 
     const joinMutation = useMutation({
         mutationFn: (data: MutationData) => axios.post(`http://localhost:8080/user/${data.userId}/join/${data.communityId}`),
-        onSuccess: () => {
-            toast.success('Successfully joined the community');
+        onSuccess: (res: any) => {
+            const successMessage = res.data?.message || 'Successfully joined the community';
+            toast.success(successMessage);
         },
         onError: (error: any) => {
-            toast.error(`Error: ${error.message}`);
+            const errorMessage = error.response?.data?.message || 'An unknown error occurred';
+            toast.error(`Error: ${errorMessage}`);
         }
     });
     const leaveMutation = useMutation({
         mutationFn: (data: MutationData) => axios.delete(`http://localhost:8080/user/${data.userId}/leave/${data.communityId}`),
-        onSuccess: () => {
-            toast.success('Successfully left the community');
+        onSuccess: (res: any) => {
+            const successMessage = res.data?.message || 'Successfully left the community';
+            toast.success(successMessage);
         },
         onError: (error: any) => {
-            toast.error(`Error: ${error.message}`);
+            const errorMessage = error.response?.data?.message || 'An unknown error occurred';
+            toast.error(`Error: ${errorMessage}`);
         }
     });
 
