@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Community, User } from '../interfaces';
 import "./UserCommunityRelationshipManager.css";
 import { toast } from 'react-hot-toast';
+import { API_BASE_URL } from '../../../shared/constants';
 
 interface MutationData {
     userId: string;
@@ -16,16 +17,16 @@ const UserCommunityRelationshipManager = () => {
 
     const { data: users, isLoading: usersLoading } = useQuery({
         queryKey: ['users'],
-        queryFn: () => axios.get('http://localhost:8080/user').then(res => res.data)
+        queryFn: () => axios.get(`${API_BASE_URL}/user`).then(res => res.data)
     });
 
     const { data: communities, isLoading: communitiesLoading } = useQuery({
         queryKey: ['communities'],
-        queryFn: () => axios.get('http://localhost:8080/community').then(res => res.data)
+        queryFn: () => axios.get(`${API_BASE_URL}/community`).then(res => res.data)
     });
 
     const joinMutation = useMutation({
-        mutationFn: (data: MutationData) => axios.post(`http://localhost:8080/user/${data.userId}/join/${data.communityId}`),
+        mutationFn: (data: MutationData) => axios.post(`${API_BASE_URL}/user/${data.userId}/join/${data.communityId}`),
         onSuccess: (res: any) => {
             const successMessage = res.data?.message || 'Successfully joined the community';
             toast.success(successMessage);
@@ -36,7 +37,7 @@ const UserCommunityRelationshipManager = () => {
         }
     });
     const leaveMutation = useMutation({
-        mutationFn: (data: MutationData) => axios.delete(`http://localhost:8080/user/${data.userId}/leave/${data.communityId}`),
+        mutationFn: (data: MutationData) => axios.delete(`${API_BASE_URL}/user/${data.userId}/leave/${data.communityId}`),
         onSuccess: (res: any) => {
             const successMessage = res.data?.message || 'Successfully left the community';
             toast.success(successMessage);

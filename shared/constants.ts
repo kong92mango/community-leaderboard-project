@@ -1,0 +1,3 @@
+export const API_BASE_URL = 'http://localhost:8080';
+export const BROADCAST_INTERVAL = 10; // in seconds
+export const DEFAULT_SOCKET_PORT = 8080;
